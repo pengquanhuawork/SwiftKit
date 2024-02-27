@@ -7,8 +7,8 @@
 
 import Foundation
 
-extension Int {
-    var formattedRepresentation: String {
+public extension Int {
+    var sk_formattedRepresentation: String {
         let absValue = abs(self)
         switch absValue {
         case 0..<1_000:

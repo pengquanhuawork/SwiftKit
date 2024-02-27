@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-extension UICollectionReusableView {
+public extension UICollectionReusableView {
     static var reuseIdentifier: String {
         return String(describing: self)
     }
 }
 
-extension UICollectionView {
+public extension UICollectionView {
     
     // MARK: - Cell
     

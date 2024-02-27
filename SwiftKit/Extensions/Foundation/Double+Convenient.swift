@@ -7,8 +7,8 @@
 
 import Foundation
 
-extension Double {
-    var formattedRepresentation: String {
+public extension Double {
+    var sk_formattedRepresentation: String {
         if self < 1000 {
             return String(format: "%.2f", self)
         } else if self < 10000 {

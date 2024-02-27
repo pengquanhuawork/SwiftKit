@@ -10,7 +10,7 @@ import UIKit
 
 public extension String {
     
-    var toJson: [String: Any]? {
+    var sk_toJson: [String: Any]? {
         do {
             if self.isEmpty {
                 return [:]
@@ -26,7 +26,7 @@ public extension String {
     
     
     
-    func toArray<T>() -> [T]? {
+    func sk_toArray<T>() -> [T]? {
         do {
             if let jsonData = self.data(using: .utf8, allowLossyConversion: false),
                 let array = try JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers) as? [T] {
@@ -42,34 +42,34 @@ public extension String {
 // 计算字符串高、宽
 public extension String {
     
-    func heightForLabel(width: CGFloat, font: UIFont, alignment: NSTextAlignment = .left) -> CGFloat {
+    func sk_heightForLabel(width: CGFloat, font: UIFont, alignment: NSTextAlignment = .left) -> CGFloat {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = alignment
         let attributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.font: font,
             NSAttributedString.Key.paragraphStyle: paragraphStyle
         ]
-        let textSize = textSizeForLabel(width: width, height: CGFloat(Float.greatestFiniteMagnitude), attributes: attributes)
+        let textSize = sk_textSizeForLabel(width: width, height: CGFloat(Float.greatestFiniteMagnitude), attributes: attributes)
         return textSize.height
     }
     
-    func heightForLabel(width: CGFloat, attributes: [NSAttributedString.Key: Any]) -> CGFloat {
-        let textSize = textSizeForLabel(width: width, height: CGFloat(Float.greatestFiniteMagnitude), attributes: attributes)
+    func sk_heightForLabel(width: CGFloat, attributes: [NSAttributedString.Key: Any]) -> CGFloat {
+        let textSize = sk_textSizeForLabel(width: width, height: CGFloat(Float.greatestFiniteMagnitude), attributes: attributes)
         return textSize.height
     }
     
-    func widthForLabel(font: UIFont) -> CGFloat {
+    func sk_widthForLabel(font: UIFont) -> CGFloat {
         let labelTextAttributes = [NSAttributedString.Key.font: font]
-        let textSize = textSizeForLabel(width: CGFloat(Float.greatestFiniteMagnitude), height: CGFloat(Float.greatestFiniteMagnitude), attributes: labelTextAttributes)
+        let textSize = sk_textSizeForLabel(width: CGFloat(Float.greatestFiniteMagnitude), height: CGFloat(Float.greatestFiniteMagnitude), attributes: labelTextAttributes)
         return textSize.width
     }
     
-    func widthForLabel(attributes: [NSAttributedString.Key: Any]) -> CGFloat {
-        let textSize = textSizeForLabel(width: CGFloat(Float.greatestFiniteMagnitude), height: CGFloat(Float.greatestFiniteMagnitude), attributes: attributes)
+    func sk_widthForLabel(attributes: [NSAttributedString.Key: Any]) -> CGFloat {
+        let textSize = sk_textSizeForLabel(width: CGFloat(Float.greatestFiniteMagnitude), height: CGFloat(Float.greatestFiniteMagnitude), attributes: attributes)
         return textSize.width
     }
     
-    func textSizeForLabel(width: CGFloat, height: CGFloat, font: UIFont, lineSpacing: CGFloat = 5, alignment: NSTextAlignment = .left) -> CGSize {
+    func sk_textSizeForLabel(width: CGFloat, height: CGFloat, font: UIFont, lineSpacing: CGFloat = 5, alignment: NSTextAlignment = .left) -> CGSize {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = lineSpacing
         paragraphStyle.alignment = alignment
@@ -77,16 +77,16 @@ public extension String {
             NSAttributedString.Key.font: font,
             NSAttributedString.Key.paragraphStyle: paragraphStyle
         ]
-        let textSize = textSizeForLabel(width: width, height: height, attributes: attributes)
+        let textSize = sk_textSizeForLabel(width: width, height: height, attributes: attributes)
         return textSize
     }
     
-    func textSizeForLabel(size: CGSize, attributes: [NSAttributedString.Key: Any]) -> CGSize {
-        let textSize = textSizeForLabel(width: size.width, height: size.height, attributes: attributes)
+    func sk_textSizeForLabel(size: CGSize, attributes: [NSAttributedString.Key: Any]) -> CGSize {
+        let textSize = sk_textSizeForLabel(width: size.width, height: size.height, attributes: attributes)
         return textSize
     }
     
-    func textSizeForLabel(width: CGFloat, height: CGFloat, attributes: [NSAttributedString.Key: Any]) -> CGSize {
+    func sk_textSizeForLabel(width: CGFloat, height: CGFloat, attributes: [NSAttributedString.Key: Any]) -> CGSize {
         let defaultOptions: NSStringDrawingOptions = [.usesLineFragmentOrigin, .usesFontLeading]
         let maxSize = CGSize(width: floor(width), height: floor(height))
         let rect = self.boundingRect(with: maxSize, options: defaultOptions, attributes: attributes, context: nil)
@@ -99,7 +99,7 @@ public extension String {
 
 public extension String {
     
-    func matches(pattern: String) -> [NSTextCheckingResult] {
+    func sk_matches(pattern: String) -> [NSTextCheckingResult] {
         do {
             let range = NSRange(location: 0, length: count)
             let expression = try NSRegularExpression(pattern: pattern, options: .caseInsensitive)
@@ -112,7 +112,7 @@ public extension String {
     }
     
     // 获取 URL 参数
-    func getUrlParam(for key: String) -> String? {
+    func sk_getUrlParam(for key: String) -> String? {
         let components = URLComponents(string: self)
         let firstMacth = components?.queryItems?.first(where: { $0.name == key })
         return firstMacth?.value
@@ -122,7 +122,7 @@ public extension String {
 // MARK: - 截取子串
 public extension String {
     
-    func substring(between startString: String, and endString: String?, options: String.CompareOptions = .caseInsensitive) -> String? {
+    func sk_substring(between startString: String, and endString: String?, options: String.CompareOptions = .caseInsensitive) -> String? {
         let range = self.range(of: startString, options: options)
         if let startIndex = range?.upperBound {
             let string = String(self[startIndex...])
@@ -137,7 +137,7 @@ public extension String {
         return nil
     }
     
-    func substring(prefix: String, options: String.CompareOptions = .caseInsensitive, containPrefix: Bool = true) -> String? {
+    func sk_substring(prefix: String, options: String.CompareOptions = .caseInsensitive, containPrefix: Bool = true) -> String? {
         let range = self.range(of: prefix, options: options)
         if let startIndex = range?.upperBound {
             var resultString = String(self[startIndex...])
@@ -149,7 +149,7 @@ public extension String {
         return nil
     }
     
-    func substring(suffix: String, options: String.CompareOptions = .caseInsensitive, containSuffix: Bool = false) -> String? {
+    func sk_substring(suffix: String, options: String.CompareOptions = .caseInsensitive, containSuffix: Bool = false) -> String? {
         let range = self.range(of: suffix, options: options)
         if let startIndex = range?.lowerBound {
             var resultString = String(self[startIndex...])
@@ -161,7 +161,7 @@ public extension String {
         return nil
     }
     
-    func splitFirst(_ split: String, options: String.CompareOptions = .caseInsensitive) -> [String] {
+    func sk_splitFirst(_ split: String, options: String.CompareOptions = .caseInsensitive) -> [String] {
         let range = self.range(of: split, options: options)
         if let splitIndex = range?.lowerBound {
             let right = String(self[splitIndex...])
@@ -171,19 +171,19 @@ public extension String {
         return []
     }
     
-    func substring(from: Int) -> String? {
+    func sk_substring(from: Int) -> String? {
         guard count > from && from >= 0 else { return nil }
         let index = self.index(self.startIndex, offsetBy: from)
         return String(self[index...])
     }
     
-    func substring(to: Int) -> String? {
+    func sk_substring(to: Int) -> String? {
         guard count > to && to >= 0 else { return nil }
         let index = self.index(self.startIndex, offsetBy: to)
         return String(self[..<index])
     }
     
-    func substring(with range: Range<Int>) -> String? {
+    func sk_substring(with range: Range<Int>) -> String? {
         guard count > range.lowerBound && range.lowerBound >= 0 else { return nil }
         guard count > range.upperBound && range.upperBound >= 0 else { return nil }
         let lower = self.index(self.startIndex, offsetBy: range.lowerBound)
@@ -192,7 +192,7 @@ public extension String {
         return String(self[range])
     }
     
-    func substring(_ lower: Int, _ upper: Int) -> String? {
+    func sk_substring(_ lower: Int, _ upper: Int) -> String? {
         guard count > lower && lower >= 0 else { return nil }
         guard count > upper && upper >= 0 else { return nil }
         let lowerIndex = self.index(self.startIndex, offsetBy: lower)
@@ -206,40 +206,40 @@ extension String {
     /*
      *去掉首尾空格
      */
-    var removeHeadAndTailSpace:String {
+    var sk_removeHeadAndTailSpace:String {
         let whitespace = NSCharacterSet.whitespaces
         return self.trimmingCharacters(in: whitespace)
     }
     /*
      *去掉首尾空格 包括后面的换行 \n
      */
-    var removeHeadAndTailSpacePro:String {
+    var sk_removeHeadAndTailSpacePro:String {
         let whitespace = NSCharacterSet.whitespacesAndNewlines
         return self.trimmingCharacters(in: whitespace)
     }
     /*
      *去掉所有空格
      */
-    var removeAllSapce: String {
+    var sk_removeAllSapce: String {
         return self.replacingOccurrences(of: " ", with: "", options: .literal, range: nil)
     }
 }
 
 // URL
 public extension String {
-    var urlEncoding: String {
+    var sk_urlEncoding: String {
         return addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? self
     }
 }
 
 public extension NSAttributedString {
-    static func truncationToken(_ token: String, color: UIColor, font: UIFont) -> NSAttributedString {
+    static func sk_truncationToken(_ token: String, color: UIColor, font: UIFont) -> NSAttributedString {
         NSAttributedString(string: token, attributes: [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: font])
     }
 }
 
 public extension String {
-    func addAttributeString(_ addAttributes: [NSAttributedString.Key : Any], for texts: [String]) -> NSAttributedString {
+    func sk_addAttributeString(_ addAttributes: [NSAttributedString.Key : Any], for texts: [String]) -> NSAttributedString {
         let attributeStr = NSMutableAttributedString(string: self)
         let nsString = NSString(string: self)
         for text in texts {
@@ -252,7 +252,7 @@ public extension String {
 }
 
 extension String {
-    func formatDateString(from inputFormat: String, to outputFormat: String) -> String? {
+    func sk_formatDateString(from inputFormat: String, to outputFormat: String) -> String? {
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = inputFormat
 

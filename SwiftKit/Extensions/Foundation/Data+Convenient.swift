@@ -9,11 +9,11 @@ import Foundation
 
 public extension Data {
     
-    func decoded<T: Decodable>() throws -> T {
+    func sk_decoded<T: Decodable>() throws -> T {
         return try JSONDecoder().decode(T.self, from: self)
     }
     
-    func toDictionary() -> [String: Any]? {
+    func sk_toDictionary() -> [String: Any]? {
         do {
             return try JSONSerialization.jsonObject(with: self, options: []) as? [String: Any]
         } catch {

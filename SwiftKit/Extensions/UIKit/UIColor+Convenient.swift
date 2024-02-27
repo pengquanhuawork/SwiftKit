@@ -42,7 +42,7 @@ public extension UIColor {
         
         var str: String = hex.lowercased()
         var values: [Int] = [0, 0, 0]
-        str = str.substring(prefix: "#", containPrefix: false) ?? str
+        str = str.sk_substring(prefix: "#", containPrefix: false) ?? str
         var radixStr: String = ""
         for (index, char) in str.enumerated() {
             let valueIndex: Int = index / 2

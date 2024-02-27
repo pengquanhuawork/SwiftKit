@@ -8,19 +8,19 @@
 import Foundation
 import UIKit
 
-extension UITableViewCell {
+public extension UITableViewCell {
     static var reuseIdentifier: String {
         return String(describing: self)
     }
 }
 
-extension UITableViewHeaderFooterView {
+public extension UITableViewHeaderFooterView {
     static var reuseIdentifier: String {
         return String(describing: self)
     }
 }
 
-extension UITableView {
+public extension UITableView {
     
     // MARK: - Cell
     

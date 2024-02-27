@@ -9,7 +9,7 @@ import Foundation
 
 public extension Array {
     
-    func safeIndex(_ i: Int) -> Array.Iterator.Element? {
+    func sk_safeIndex(_ i: Int) -> Array.Iterator.Element? {
         guard !isEmpty && i >= 0 && i < count else { return nil }
         return self[i]
     }
@@ -20,7 +20,7 @@ public extension Array {
     }
     
     // 去重
-    func filterDuplicates<E: Equatable>(_ filter: (Element) -> E) -> [Element] {
+    func sk_filterDuplicates<E: Equatable>(_ filter: (Element) -> E) -> [Element] {
         var result = [Element]()
         for value in self {
             let key = filter(value)

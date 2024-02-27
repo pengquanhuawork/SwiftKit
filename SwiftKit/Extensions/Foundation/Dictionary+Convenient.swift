@@ -7,8 +7,8 @@
 
 import Foundation
 
-extension NSDictionary {
-    func getBool(_ keys: String..., defaultValue: Bool = false) -> Bool {
+public extension NSDictionary {
+    func sk_getBool(_ keys: String..., defaultValue: Bool = false) -> Bool {
         for key in keys {
             if let result = self[key] as? Bool {
                 return result
@@ -17,7 +17,7 @@ extension NSDictionary {
         return defaultValue
     }
 
-    func getDouble(_ keys: String..., defaultValue: Double = 0.0, minValue: Double? = nil, maxValue: Double? = nil) -> Double {
+    func sk_getDouble(_ keys: String..., defaultValue: Double = 0.0, minValue: Double? = nil, maxValue: Double? = nil) -> Double {
         for key in keys {
             if var result = self[key] as? Double {
                 if let minValue = minValue {
@@ -32,7 +32,7 @@ extension NSDictionary {
         return defaultValue
     }
 
-    func getInt(_ keys: String..., defaultValue: Int = 0, minValue: Int? = nil, maxValue: Int? = nil) -> Int {
+    func sk_getInt(_ keys: String..., defaultValue: Int = 0, minValue: Int? = nil, maxValue: Int? = nil) -> Int {
         for key in keys {
             if var result = self[key] as? Int {
                 if let minValue = minValue {
@@ -47,7 +47,7 @@ extension NSDictionary {
         return defaultValue
     }
 
-    func getInt64(_ keys: String..., defaultValue: Int64 = 0, minValue: Int64? = nil, maxValue: Int64? = nil) -> Int64 {
+    func sk_getInt64(_ keys: String..., defaultValue: Int64 = 0, minValue: Int64? = nil, maxValue: Int64? = nil) -> Int64 {
         for key in keys {
             if var result = self[key] as? Int64 {
                 if let minValue = minValue {
@@ -62,7 +62,7 @@ extension NSDictionary {
         return defaultValue
     }
 
-    func getString(_ keys: String..., defaultValue: String? = nil) -> String? {
+    func sk_getString(_ keys: String..., defaultValue: String? = nil) -> String? {
         for key in keys {
             if let result = self[key] as? String {
                 return result
@@ -71,7 +71,7 @@ extension NSDictionary {
         return defaultValue
     }
 
-    func getDict(_ keys: String..., defaultValue: NSDictionary? = nil) -> NSDictionary? {
+    func sk_getDict(_ keys: String..., defaultValue: NSDictionary? = nil) -> NSDictionary? {
         for key in keys {
             if let result = self[key] as? NSDictionary {
                 return result
@@ -80,7 +80,7 @@ extension NSDictionary {
         return defaultValue
     }
 
-    func getArray<T>(_ keys: String..., type: T.Type) -> [T] {
+    func sk_getArray<T>(_ keys: String..., type: T.Type) -> [T] {
         for key in keys {
             if let result = self[key] as? [T] {
                 return result
@@ -89,7 +89,7 @@ extension NSDictionary {
         return []
     }
 
-    var toJsonString: String {
+    var sk_toJsonString: String {
         if let jsonData = try? JSONSerialization.data(withJSONObject: self, options: .prettyPrinted) {
             if let jsonString = String(data: jsonData, encoding: .utf8) {
                 return jsonString
@@ -101,7 +101,7 @@ extension NSDictionary {
 
 extension Dictionary where Key == String {
 
-    func getBool(_ keys: String..., defaultValue: Bool = false) -> Bool {
+    func sk_getBool(_ keys: String..., defaultValue: Bool = false) -> Bool {
         for key in keys {
             if let result = self[key] as? Bool {
                 return result
@@ -110,7 +110,7 @@ extension Dictionary where Key == String {
         return defaultValue
     }
 
-    func getDouble(_ keys: String..., defaultValue: Double = 0.0, minValue: Double? = nil, maxValue: Double? = nil) -> Double {
+    func sk_getDouble(_ keys: String..., defaultValue: Double = 0.0, minValue: Double? = nil, maxValue: Double? = nil) -> Double {
         for key in keys {
             if var result = self[key] as? Double {
                 if let minValue = minValue {
@@ -133,7 +133,7 @@ extension Dictionary where Key == String {
         return defaultValue
     }
 
-    func getInt(_ keys: String..., defaultValue: Int = 0, minValue: Int? = nil, maxValue: Int? = nil) -> Int {
+    func sk_getInt(_ keys: String..., defaultValue: Int = 0, minValue: Int? = nil, maxValue: Int? = nil) -> Int {
         for key in keys {
             if var result = self[key] as? Int {
                 if let minValue = minValue {
@@ -156,7 +156,7 @@ extension Dictionary where Key == String {
         return defaultValue
     }
 
-    func getInt64(_ keys: String..., defaultValue: Int64 = 0, minValue: Int64? = nil, maxValue: Int64? = nil) -> Int64 {
+    func sk_getInt64(_ keys: String..., defaultValue: Int64 = 0, minValue: Int64? = nil, maxValue: Int64? = nil) -> Int64 {
         for key in keys {
             if var result = self[key] as? Int64 {
                 if let minValue = minValue {
@@ -179,7 +179,7 @@ extension Dictionary where Key == String {
         return defaultValue
     }
 
-    func getString(_ keys: String..., defaultValue: String? = nil) -> String? {
+    func sk_getString(_ keys: String..., defaultValue: String? = nil) -> String? {
         for key in keys {
             if let result = self[key] as? String {
                 return result
@@ -192,19 +192,19 @@ extension Dictionary where Key == String {
         return defaultValue
     }
 
-    func getDict(_ keys: String..., defaultValue: NSDictionary? = nil) -> NSDictionary? {
+    func sk_getDict(_ keys: String..., defaultValue: NSDictionary? = nil) -> NSDictionary? {
         for key in keys {
             if let result = self[key] as? NSDictionary {
                 return result
             } else if let resultStr = self[key] as? String {
-                let result = convertStringToDictionary(text: resultStr)
+                let result = sk_convertStringToDictionary(text: resultStr)
                 return result
             }
         }
         return defaultValue
     }
 
-    func getOptionalObject<T>(_ keys: String..., type: T.Type, defaultValue: T? = nil) -> T? {
+    func sk_getOptionalObject<T>(_ keys: String..., type: T.Type, defaultValue: T? = nil) -> T? {
         for key in keys {
             if let result = self[key] as? T {
                 return result
@@ -213,7 +213,7 @@ extension Dictionary where Key == String {
         return defaultValue
     }
 
-    func getObject<T>(_ keys: String..., type: T.Type, defaultValue: T) -> T {
+    func sk_getObject<T>(_ keys: String..., type: T.Type, defaultValue: T) -> T {
         for key in keys {
             if let result = self[key] as? T {
                 return result
@@ -222,7 +222,7 @@ extension Dictionary where Key == String {
         return defaultValue
     }
 
-    func getArray<T>(_ keys: String..., type: T.Type) -> [T] {
+    func sk_getArray<T>(_ keys: String..., type: T.Type) -> [T] {
         for key in keys {
             if let result = self[key] as? [T] {
                 return result
@@ -245,7 +245,7 @@ extension Dictionary where Key == String {
         }
     }
 
-    var toJsonString: String {
+    var sk_toJsonString: String {
         if let jsonData = try? JSONSerialization.data(withJSONObject: self, options: .prettyPrinted) {
             if let jsonString = String(data: jsonData, encoding: .utf8) {
                 return jsonString
@@ -254,7 +254,7 @@ extension Dictionary where Key == String {
         return "{}"
     }
 
-    func convertStringToDictionary(text: String) -> NSDictionary? {
+    func sk_convertStringToDictionary(text: String) -> NSDictionary? {
         if let data = text.data(using: .utf8) {
             do {
                 return try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary

@@ -7,8 +7,8 @@
 
 import Foundation
 
-extension TimeInterval {
-    func toDate(withFormat format: String) -> String {
+public extension TimeInterval {
+    func sk_toDate(withFormat format: String) -> String {
         let date = Date(timeIntervalSince1970: self / 1000.0)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
