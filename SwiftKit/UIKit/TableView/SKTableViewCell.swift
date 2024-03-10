@@ -7,7 +7,17 @@
 
 import UIKit
 
+public protocol SKTableViewCellDelegate: AnyObject {
+    
+}
+
 open class SKTableViewCell: UITableViewCell {
+    
+    public var delegate: SKTableViewCellDelegate?
+    open var data: Any?
+    public var separator: UIView?
+    public var iconImageView: UIImageView?
+    public var titleLabel: UILabel?
 
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

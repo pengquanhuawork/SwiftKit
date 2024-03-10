@@ -22,6 +22,9 @@ public var KeyWindow: UIView? = {
     return UIApplication.shared.windows.first(where: { $0.isKeyWindow });
 }()
 
+public func Radio(_ value: CGFloat) -> CGFloat {
+    return value * ScreenRadio
+}
 //+ (CGFloat)fd_statusBarHeight {
 //    if (@available(iOS 13.0, *)) {
 //        NSSet *set = [UIApplication sharedApplication].connectedScenes;
