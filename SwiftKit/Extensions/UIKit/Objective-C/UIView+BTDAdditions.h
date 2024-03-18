@@ -79,6 +79,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)btd_eachSubview:(void (^)(UIView *subview))block;
 
+- (void)btd_roundCorners:(UIRectCorner)corners
+                 radius:(CGFloat)radius;
+
+- (void)btd_roundCorners:(UIRectCorner)corners
+                 radius:(CGFloat)radius
+            roundedRect:(CGRect)rect;
+
 @end
 
 NS_ASSUME_NONNULL_END

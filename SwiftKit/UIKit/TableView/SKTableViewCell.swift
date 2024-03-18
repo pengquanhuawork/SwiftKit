@@ -18,6 +18,8 @@ open class SKTableViewCell: UITableViewCell {
     public var separator: UIView?
     public var iconImageView: UIImageView?
     public var titleLabel: UILabel?
+    public var subTitleLabel: UILabel?
+    public var arrowImageView: UIImageView?
 
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

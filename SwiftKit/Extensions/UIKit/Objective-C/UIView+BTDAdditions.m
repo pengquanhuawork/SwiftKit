@@ -96,7 +96,7 @@
 
 - (UIImage *)btd_snapshotImage
 {
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, 0);
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *snap = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -250,6 +250,24 @@
     self.layer.shadowOffset = CGSizeZero;
     self.layer.cornerRadius = cornerRadius;
     self.layer.masksToBounds = NO;
+}
+
+- (void)btd_roundCorners:(UIRectCorner)corners
+                 radius:(CGFloat)radius
+{
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:corners cornerRadii:CGSizeMake(radius, radius)];
+    CAShapeLayer *mask = [[CAShapeLayer alloc] init];
+    mask.path = path.CGPath;
+    self.layer.mask = mask;
+}
+
+- (void)btd_roundCorners:(UIRectCorner)corners
+                 radius:(CGFloat)radius
+            roundedRect:(CGRect)rect {
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:corners cornerRadii:CGSizeMake(radius, radius)];
+    CAShapeLayer *mask = [[CAShapeLayer alloc] init];
+    mask.path = path.CGPath;
+    self.layer.mask = mask;
 }
 
 @end

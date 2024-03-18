@@ -28,6 +28,10 @@ public extension UIColor {
         }
     }
     
+    static func hex(_ hex: String) -> UIColor {
+        return UIColor(hex: hex)
+    }
+    
     // Random
     static var randomColor: UIColor {
         return UIColor(r: Int(arc4random_uniform(256)), g: Int(arc4random_uniform(256)), b: Int(arc4random_uniform(256)))

@@ -108,7 +108,7 @@ public extension Date {
         return sk_string(with: format, timeZone: nil, locale: Locale.current)
     }
 
-    func sk_string(with format: String, timeZone: TimeZone?, locale: Locale) -> String {
+    func sk_string(with format: String, timeZone: TimeZone? = nil, locale: Locale) -> String {
         let formatter = Date.sk_OptimizeDateFormatterEnabled && Thread.isMainThread ? Date.DateFormatterForMainThread() : DateFormatter()
         formatter.dateFormat = format
         formatter.timeZone = timeZone

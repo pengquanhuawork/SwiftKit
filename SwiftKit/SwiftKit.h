@@ -31,9 +31,13 @@
 #import <SwiftKit/UIWindow+BTDAdditions.h>
 #import <SwiftKit/UIControl+BTDAdditions.h>
 #import <SwiftKit/UIImage+BTDAdditions.h>
+#import <SwiftKit/UIViewController+ModalContainer.h>
 
 #import <SwiftKit/TIMMulticastDelegate.h>
 
+// Modal
+#import <SwiftKit/SCBackgroundView.h>
+#import <SwiftKit/SCModalContainerViewController.h>
 
 //! Project version number for SwiftKit.
 FOUNDATION_EXPORT double SwiftKitVersionNumber;
