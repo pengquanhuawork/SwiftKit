@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		89075EE02B94B254004791E4 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 89075EDF2B94B254004791E4 /* IQKeyboardManagerSwift */; };
+		890DD84B2BABF34200DE1212 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 890DD84A2BABF34200DE1212 /* KeychainSwift */; };
 		89243AA52B9DFD8D0074CD3B /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 89243A8B2B9DFD8D0074CD3B /* MASCompositeConstraint.h */; };
 		89243AA62B9DFD8D0074CD3B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 89243A8C2B9DFD8D0074CD3B /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		89243AA72B9DFD8D0074CD3B /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 89243A8D2B9DFD8D0074CD3B /* MASConstraint+Private.h */; };
@@ -42,7 +43,6 @@
 		89243B332B9DFE700074CD3B /* SCModalNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89243AD12B9DFE6F0074CD3B /* SCModalNavigationController.m */; };
 		89243B342B9DFE700074CD3B /* SCModalContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89243AD22B9DFE6F0074CD3B /* SCModalContainerViewController.m */; };
 		89243B392B9E01D50074CD3B /* UIViewController+ModalContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89243B382B9E01D50074CD3B /* UIViewController+ModalContainer.m */; };
-		89243B3C2B9E04320074CD3B /* UIViewController+Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89243B3B2B9E04320074CD3B /* UIViewController+Modal.swift */; };
 		89243B642B9E057E0074CD3B /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89243B3E2B9E057C0074CD3B /* ConstraintLayoutGuide.swift */; };
 		89243B652B9E057E0074CD3B /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89243B3F2B9E057C0074CD3B /* Debugging.swift */; };
 		89243B662B9E057E0074CD3B /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89243B402B9E057C0074CD3B /* ConstraintDirectionalInsetTarget.swift */; };
@@ -193,6 +193,8 @@
 		89A995372BA7109600ABF62E /* SKShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A995362BA7109600ABF62E /* SKShare.swift */; };
 		89A9953A2BA7166A00ABF62E /* SKFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A995392BA7166A00ABF62E /* SKFeedback.swift */; };
 		89A9953F2BA7470500ABF62E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A9953E2BA7470500ABF62E /* Player.swift */; };
+		89A995442BA7D39200ABF62E /* SKAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A995432BA7D39200ABF62E /* SKAlert.swift */; };
+		89A995462BA7D41B00ABF62E /* SKMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A995452BA7D41B00ABF62E /* SKMedia.swift */; };
 		89B2F8B52BA450260045FD4B /* SKScrollContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B2F8B42BA450260045FD4B /* SKScrollContainerView.swift */; };
 		89B2FE812BA5E2BB0045FD4B /* HypeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 89B2FE802BA5E2BB0045FD4B /* HypeUI */; };
 		89B2FE842BA686660045FD4B /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 89B2FE832BA686660045FD4B /* SwiftyStoreKit */; };
@@ -204,8 +206,10 @@
 		89C0A2B72B906D6E00E64C67 /* SKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0A2B62B906D6E00E64C67 /* SKColor.swift */; };
 		89C0B4C52B9206C500E64C67 /* SKCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0B4C42B9206C500E64C67 /* SKCollectionView.swift */; };
 		89C267162B9427A400BA1335 /* SKSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C267152B9427A400BA1335 /* SKSwitch.swift */; };
+		89DCDC6B2BA9933200630338 /* SKFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCDC6A2BA9933200630338 /* SKFileManager.swift */; };
 		89E771AF2B9C32DC007C7596 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 89E771AE2B9C32DC007C7596 /* Defaults */; };
 		89E771B22B9C332F007C7596 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 89E771B12B9C332F007C7596 /* Defaults */; };
+		89F584CB2BA7F5ED00F5BD33 /* SwiftyGif in Frameworks */ = {isa = PBXBuildFile; productRef = 89F584CA2BA7F5ED00F5BD33 /* SwiftyGif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -243,7 +247,6 @@
 		89243AD12B9DFE6F0074CD3B /* SCModalNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCModalNavigationController.m; sourceTree = "<group>"; };
 		89243AD22B9DFE6F0074CD3B /* SCModalContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCModalContainerViewController.m; sourceTree = "<group>"; };
 		89243B382B9E01D50074CD3B /* UIViewController+ModalContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ModalContainer.m"; sourceTree = "<group>"; };
-		89243B3B2B9E04320074CD3B /* UIViewController+Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Modal.swift"; path = "../../../../../../UIViewController+Modal.swift"; sourceTree = "<group>"; };
 		89243B3E2B9E057C0074CD3B /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
 		89243B3F2B9E057C0074CD3B /* Debugging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debugging.swift; sourceTree = "<group>"; };
 		89243B402B9E057C0074CD3B /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
@@ -397,6 +400,8 @@
 		89A995362BA7109600ABF62E /* SKShare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKShare.swift; sourceTree = "<group>"; };
 		89A995392BA7166A00ABF62E /* SKFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKFeedback.swift; sourceTree = "<group>"; };
 		89A9953E2BA7470500ABF62E /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		89A995432BA7D39200ABF62E /* SKAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKAlert.swift; sourceTree = "<group>"; };
+		89A995452BA7D41B00ABF62E /* SKMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKMedia.swift; sourceTree = "<group>"; };
 		89B2F8B42BA450260045FD4B /* SKScrollContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKScrollContainerView.swift; sourceTree = "<group>"; };
 		89B2FE882BA686A10045FD4B /* UIViewController+Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Modal.swift"; sourceTree = "<group>"; };
 		89B2FE8A2BA686A10045FD4B /* UIViewController+ModalContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ModalContainer.h"; sourceTree = "<group>"; };
@@ -414,6 +419,7 @@
 		89C0A2B62B906D6E00E64C67 /* SKColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKColor.swift; sourceTree = "<group>"; };
 		89C0B4C42B9206C500E64C67 /* SKCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKCollectionView.swift; sourceTree = "<group>"; };
 		89C267152B9427A400BA1335 /* SKSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSwitch.swift; sourceTree = "<group>"; };
+		89DCDC6A2BA9933200630338 /* SKFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,12 +429,14 @@
 			files = (
 				89B2FE812BA5E2BB0045FD4B /* HypeUI in Frameworks */,
 				89B2FE9D2BA6BD430045FD4B /* MerchantKit in Frameworks */,
+				890DD84B2BABF34200DE1212 /* KeychainSwift in Frameworks */,
 				89E771B22B9C332F007C7596 /* Defaults in Frameworks */,
 				89243B9B2B9ED1FC0074CD3B /* HXPhotoPicker in Frameworks */,
 				89B2FEA02BA6CCA80045FD4B /* SVProgressHUD in Frameworks */,
 				89B2FE842BA686660045FD4B /* SwiftyStoreKit in Frameworks */,
 				89E771AF2B9C32DC007C7596 /* Defaults in Frameworks */,
 				89075EE02B94B254004791E4 /* IQKeyboardManagerSwift in Frameworks */,
+				89F584CB2BA7F5ED00F5BD33 /* SwiftyGif in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,7 +501,6 @@
 		89243ABF2B9DFE6F0074CD3B /* ModalContainer */ = {
 			isa = PBXGroup;
 			children = (
-				89243B3A2B9E04100074CD3B /* Public */,
 				89243AC02B9DFE6F0074CD3B /* Privates */,
 			);
 			name = ModalContainer;
@@ -514,14 +521,6 @@
 				89243AC32B9DFE6F0074CD3B /* SCBackgroundView.m */,
 			);
 			path = Privates;
-			sourceTree = "<group>";
-		};
-		89243B3A2B9E04100074CD3B /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				89243B3B2B9E04320074CD3B /* UIViewController+Modal.swift */,
-			);
-			path = Public;
 			sourceTree = "<group>";
 		};
 		89243B3D2B9E056E0074CD3B /* SnapKit */ = {
@@ -653,6 +652,7 @@
 			children = (
 				894D6FC22B8E36C700B96DCD /* SwiftAlertView.swift */,
 				894D6FC42B8E371700B96DCD /* SKAlertView.swift */,
+				89A995432BA7D39200ABF62E /* SKAlert.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -712,6 +712,8 @@
 		8976B6012B9818A5001E602B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				89DCDC692BA9931D00630338 /* SKFileManager */,
+				89A995422BA7D18F00ABF62E /* Photo */,
 				89A9953D2BA746F100ABF62E /* Player */,
 				89A995382BA7164300ABF62E /* FeedBack */,
 				89A995352BA7107D00ABF62E /* Share */,
@@ -890,6 +892,14 @@
 			path = Player;
 			sourceTree = "<group>";
 		};
+		89A995422BA7D18F00ABF62E /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				89A995452BA7D41B00ABF62E /* SKMedia.swift */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
 		89B2F8B22BA44FDA0045FD4B /* Multicast */ = {
 			isa = PBXGroup;
 			children = (
@@ -971,6 +981,14 @@
 				8961DDC72B92E27500076FA2 /* SKCollectionViewCell.swift */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		89DCDC692BA9931D00630338 /* SKFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				89DCDC6A2BA9933200630338 /* SKFileManager.swift */,
+			);
+			path = SKFileManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1065,6 +1083,8 @@
 				89B2FE832BA686660045FD4B /* SwiftyStoreKit */,
 				89B2FE9C2BA6BD430045FD4B /* MerchantKit */,
 				89B2FE9F2BA6CCA80045FD4B /* SVProgressHUD */,
+				89F584CA2BA7F5ED00F5BD33 /* SwiftyGif */,
+				890DD84A2BABF34200DE1212 /* KeychainSwift */,
 			);
 			productName = SwiftKit;
 			productReference = 893611B02B65462000127FA6 /* SwiftKit.framework */;
@@ -1143,6 +1163,8 @@
 				89B2FE822BA686650045FD4B /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 				89B2FE9B2BA6BD430045FD4B /* XCRemoteSwiftPackageReference "merchantkit" */,
 				89B2FE9E2BA6CCA70045FD4B /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
+				89F584C92BA7F5ED00F5BD33 /* XCRemoteSwiftPackageReference "SwiftyGif" */,
+				890DD8492BABF34200DE1212 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 893611B12B65462000127FA6 /* Products */;
 			projectDirPath = "";
@@ -1211,9 +1233,10 @@
 				898EC9A02B7B857F00D7DAC3 /* Optional+Extension.swift in Sources */,
 				897BA20C2B94A43D00B5B0BC /* NSObject+BTDAdditions.m in Sources */,
 				89243AA62B9DFD8D0074CD3B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
-				89243B3C2B9E04320074CD3B /* UIViewController+Modal.swift in Sources */,
 				89243AB62B9DFD8D0074CD3B /* NSArray+MASAdditions.m in Sources */,
+				89A995442BA7D39200ABF62E /* SKAlert.swift in Sources */,
 				897BA1C22B94A34300B5B0BC /* UIWindow+BTDAdditions.m in Sources */,
+				89DCDC6B2BA9933200630338 /* SKFileManager.swift in Sources */,
 				897BA1CB2B94A34300B5B0BC /* UIControl+BTDAdditions.m in Sources */,
 				89243ABA2B9DFD8D0074CD3B /* MASConstraint.m in Sources */,
 				8961DDC82B92E27500076FA2 /* SKCollectionViewCell.swift in Sources */,
@@ -1249,6 +1272,7 @@
 				89243B722B9E057E0074CD3B /* LayoutConstraintItem.swift in Sources */,
 				893611CB2B65462E00127FA6 /* UITableView+Extension.swift in Sources */,
 				897BA20E2B94A43D00B5B0BC /* NSURLComponents+BTDAdditions.m in Sources */,
+				89A995462BA7D41B00ABF62E /* SKMedia.swift in Sources */,
 				89243ABD2B9DFD8D0074CD3B /* MASViewAttribute.m in Sources */,
 				897BA1D82B94A34300B5B0BC /* UITextView+BTDAdditions.m in Sources */,
 				893611CE2B65462E00127FA6 /* Array+Extension.swift in Sources */,
@@ -1727,6 +1751,14 @@
 				minimumVersion = 7.0.1;
 			};
 		};
+		890DD8492BABF34200DE1212 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 21.0.0;
+			};
+		};
 		89243B992B9ED1FC0074CD3B /* XCRemoteSwiftPackageReference "HXPhotoPicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SilenceLove/HXPhotoPicker.git";
@@ -1767,6 +1799,14 @@
 				minimumVersion = 2.3.1;
 			};
 		};
+		89F584C92BA7F5ED00F5BD33 /* XCRemoteSwiftPackageReference "SwiftyGif" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kirualex/SwiftyGif.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1774,6 +1814,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 89075EDE2B94B254004791E4 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		890DD84A2BABF34200DE1212 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 890DD8492BABF34200DE1212 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 		89243B9A2B9ED1FC0074CD3B /* HXPhotoPicker */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1807,6 +1852,11 @@
 		89E771B12B9C332F007C7596 /* Defaults */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Defaults;
+		};
+		89F584CA2BA7F5ED00F5BD33 /* SwiftyGif */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89F584C92BA7F5ED00F5BD33 /* XCRemoteSwiftPackageReference "SwiftyGif" */;
+			productName = SwiftyGif;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

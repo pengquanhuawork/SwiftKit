@@ -34,6 +34,7 @@ open class SKCollectionView: UICollectionView {
         keyboardDismissMode = .onDrag
         dataSource = self
         delegate = self
+        showsHorizontalScrollIndicator = false
     }
     
     final public func register<T: SKCollectionViewCell>(_ cellType: T.Type = T.self) {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension FileManager {
+public extension FileManager {
 
     static var sk_cachePath: String {
         return NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
@@ -119,6 +119,12 @@ extension FileManager {
             }
         }
     }
-
+    
+    static func randomFileURLInCache(withSuffix suffix: String) -> URL {
+        let cacheURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+        let random = Int(Date().timeIntervalSince1970 * 1000)
+        let outputURL = cacheURL.appendingPathComponent("\(random).MOV")
+        return outputURL
+    }
     
 }

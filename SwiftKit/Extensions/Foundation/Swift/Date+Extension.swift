@@ -107,6 +107,17 @@ public extension Date {
     func sk_string(with format: String) -> String {
         return sk_string(with: format, timeZone: nil, locale: Locale.current)
     }
+    
+    func sk_daysBetweenNow() -> Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day], from: self, to: Date())
+        
+        if let days = components.day {
+            return abs(days)
+        } else {
+            return 0
+        }
+    }
 
     func sk_string(with format: String, timeZone: TimeZone? = nil, locale: Locale) -> String {
         let formatter = Date.sk_OptimizeDateFormatterEnabled && Thread.isMainThread ? Date.DateFormatterForMainThread() : DateFormatter()

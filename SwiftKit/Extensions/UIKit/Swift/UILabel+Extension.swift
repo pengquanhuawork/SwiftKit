@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UILabel {
+public extension UILabel {
 
     func sk_height(with maxWidth: CGFloat) -> CGFloat {
         return text?.sk_height(with: font, maxWidth: maxWidth) ?? 0
@@ -52,5 +52,22 @@ extension UILabel {
             attributedString.addAttribute(.foregroundColor, value: color, range: nsRange)
             self.attributedText = attributedString
         }
+    }
+    
+    func addShadow() {
+        let shadowOffset = CGSize(width: 0.5, height: 0.5)
+        let shadowColor = UIColor.black
+        let shadowBlurRadius: CGFloat = 1
+        
+        let shadow = NSShadow()
+        shadow.shadowOffset = shadowOffset
+        shadow.shadowColor = shadowColor
+        shadow.shadowBlurRadius = shadowBlurRadius
+        
+        let attributedString = NSAttributedString(string: self.text ?? "", attributes: [
+            NSAttributedString.Key.shadow: shadow
+        ])
+        
+        self.attributedText = attributedString
     }
 }

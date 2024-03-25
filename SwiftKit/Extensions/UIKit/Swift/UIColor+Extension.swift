@@ -106,6 +106,7 @@ public extension UIColor {
     static let whiteColorA6 = { white.alpha(0.6) }()
     static let whiteColorA72 = { white.alpha(0.72) }()
     static let whiteColorA9 = { white.alpha(0.9) }()
+    static let whiteColorA95 = { white.alpha(0.95) }()
     static let whiteColorA8 = { white.alpha(0.8) }()
     static let blackColorA0 = { black.alpha(0.0) }()
     static let blackColorA1 = { black.alpha(0.1) }()

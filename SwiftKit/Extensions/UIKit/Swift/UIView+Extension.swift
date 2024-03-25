@@ -22,6 +22,13 @@ public extension UIView {
 
 public extension UIView {
     
+    func frameInWindow() -> CGRect? {
+        guard let window = self.window else {
+            return nil
+        }
+        return convert(bounds, to: window)
+    }
+    
     /// The top coordinate of the UIView.
     var top: CGFloat {
         get {
@@ -300,6 +307,19 @@ public extension UIView {
         return lineLayer
     }
     
+    func sk_drawDashedLine(in rect: CGRect, cornerRadius: CGFloat, color: UIColor = .white) -> CAShapeLayer {
+        let lineLayer = CAShapeLayer()
+        lineLayer.frame = rect
+        lineLayer.lineWidth = 2
+        lineLayer.lineDashPattern = [3, 3]
+        lineLayer.strokeColor = color.cgColor
+        lineLayer.fillColor = UIColor.clear.cgColor
+        let path = UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius)
+        lineLayer.path = path.cgPath
+        self.layer.addSublayer(lineLayer)
+        return lineLayer
+    }
+    
     // MARK: - 渐变
     
     enum UIViewFadeStyle {
@@ -370,5 +390,19 @@ public extension UIView {
         UIView.animate(withDuration: 0.25, animations: {
             self.alpha = endAlpha
         })
+    }
+}
+
+public extension UIView {
+    // 禁止截屏
+    static func makeSecView() -> UIView {
+        let field = UITextField()
+        field.isSecureTextEntry = true
+        guard let view = field.subviews.first else {
+            return UIView()
+        }
+        view.subviews.forEach { $0.removeFromSuperview() }
+        view.isUserInteractionEnabled = true
+        return view
     }
 }

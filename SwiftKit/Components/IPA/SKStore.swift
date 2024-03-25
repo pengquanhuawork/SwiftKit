@@ -7,6 +7,7 @@
 
 
 import MerchantKit
+import StoreKit
 
 public enum SKPurchaseResult {
     case success
@@ -20,7 +21,7 @@ public class SKStore {
     
     public static let shared = SKStore()
     private var merchant: Merchant!
-    private var products: [Product]?
+    private var products: [MerchantKit.Product]?
     private var purchaseSet: PurchaseSet?
     
     public func isPurchased(_ identifier: String) -> Bool {
@@ -39,7 +40,8 @@ public class SKStore {
     }
     
     init() {
-        self.merchant = Merchant(configuration: .default, delegate: self)
+        let configuration = Merchant.Configuration(receiptValidator: LocalReceiptValidator(), storage: UserDefaultsPurchaseStorage())
+        self.merchant = Merchant(configuration: configuration, delegate: self)
     }
     
     public func register(_ identifiers: Set<String>) {
@@ -122,11 +124,19 @@ public class SKStore {
 
 
 extension SKStore : MerchantDelegate {
-    public func merchant(_ merchant: Merchant, didChangeStatesFor products: Set<Product>) {
+    public func merchant(_ merchant: Merchant, didChangeStatesFor products: Set<MerchantKit.Product>) {
         
     }
     public func merchantDidChangeLoadingState(_ merchant: Merchant) {
         
+    }
+}
+
+public extension SKStore {
+    static func requestReview() {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: windowScene)
+        }
     }
 }
 

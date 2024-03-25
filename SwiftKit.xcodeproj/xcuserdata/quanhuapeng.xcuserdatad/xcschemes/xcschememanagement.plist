@@ -7,7 +7,7 @@
 		<key>Example.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>13</integer>
 		</dict>
 		<key>SnapKitPlayground (Playground) 1.xcscheme</key>
 		<dict>
@@ -54,12 +54,12 @@
 		<key>SwiftKit.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>14</integer>
 		</dict>
 		<key>UIKitDemo.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>15</integer>
 		</dict>
 	</dict>
 </dict>

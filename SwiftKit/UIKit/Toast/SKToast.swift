@@ -752,7 +752,7 @@ public class ToastManager {
      Default is 3.0.
      
      */
-    public var duration: TimeInterval = 3.0
+    public var duration: TimeInterval = 2.0
     
     /**
      Sets the default position. Used for the `makeToast` and
