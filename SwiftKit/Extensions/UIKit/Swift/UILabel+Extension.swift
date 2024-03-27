@@ -70,4 +70,17 @@ public extension UILabel {
         
         self.attributedText = attributedString
     }
+    
+    func addStroke(textColor: UIColor, strokeColor: UIColor, strokeWidth: CGFloat) {
+        let strokeTextAttributes: [NSAttributedString.Key: Any] = [
+            .strokeColor: strokeColor,
+            .foregroundColor: textColor,
+            .strokeWidth: strokeWidth, // 负值表示使用文字颜色填充描边
+            .font: UIFont.boldSystemFont(ofSize: 20)
+            ]
+                
+        let strokeText = NSAttributedString(string: self.text ?? "", attributes: strokeTextAttributes)
+        
+        self.attributedText = strokeText
+    }
 }
