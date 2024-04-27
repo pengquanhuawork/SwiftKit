@@ -54,10 +54,10 @@ public extension UILabel {
         }
     }
     
-    func addShadow() {
-        let shadowOffset = CGSize(width: 0.5, height: 0.5)
+    func addShadow(offset: CGSize = CGSize(width: 0.5, height: 0.5), radius: CGFloat = 1) {
+        let shadowOffset = offset
         let shadowColor = UIColor.black
-        let shadowBlurRadius: CGFloat = 1
+        let shadowBlurRadius: CGFloat = radius
         
         let shadow = NSShadow()
         shadow.shadowOffset = shadowOffset

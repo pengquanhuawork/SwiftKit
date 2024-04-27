@@ -31,5 +31,14 @@ public class SKShare {
         
         BTDResponder.topViewController()?.present(activityVC, animated: true)
     }
+    
+    public static func ratingApp(appId: String) {
 
+        guard let url = URL(string: "itms-apps://itunes.apple.com/app/id\(appId)") else {
+            return
+        }
+        UIApplication.shared.open(url, options: [:]) { success in
+            // 在此处处理打开 URL 的结果
+        }
+    }
 }

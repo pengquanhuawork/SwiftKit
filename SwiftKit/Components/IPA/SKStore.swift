@@ -40,8 +40,8 @@ public class SKStore {
     }
     
     init() {
-        let configuration = Merchant.Configuration(receiptValidator: LocalReceiptValidator(), storage: UserDefaultsPurchaseStorage())
-        self.merchant = Merchant(configuration: configuration, delegate: self)
+        self.merchant = Merchant(configuration: .default, delegate: self)
+        
     }
     
     public func register(_ identifiers: Set<String>) {

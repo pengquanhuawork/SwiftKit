@@ -17,11 +17,21 @@ public class SKFeedback {
         return UIApplication.shared.canOpenURL(emailURL)
     }
     
-    static public func sendEmail(recipient: String, subject: String) {
-        if let emailURL = URL(string: "mailto:\(recipient)?subject=\(subject)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") {
+    static public func sendEmail(recipient: String, subject: String, body: String) {
+        if let emailURL = createEmailURL(subject: subject, body: body, to: [recipient]) {
             UIApplication.shared.open(emailURL, options: [:], completionHandler: nil)
         }
     }
+    
+    static func createEmailURL(subject: String, body: String, to: [String]) -> URL? {
+       let recipients = to.joined(separator: ",")
+       let subjectEncoded = subject.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+       let bodyEncoded = body.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+
+       let urlString = "mailto:\(recipients)?subject=\(subjectEncoded)&body=\(bodyEncoded)"
+
+       return URL(string: urlString)
+   }
     
     static public func openMailAppDownloadPage() {
         let appStoreURLString = "https://apps.apple.com/app/apple-store/id1108187098"

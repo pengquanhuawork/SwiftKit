@@ -30,4 +30,16 @@ public class SKAlert {
         
         BTDResponder.topViewController()?.present(alertController, animated: true, completion: nil)
     }
+    
+    static public func showAppSettingAlert(title: String, message: String, confirmTitle: String = "去设置", confirmAction: @escaping () -> Void, cancelAction: (() -> Void)? = nil) {
+        showAlert(title: title, message: message, confirmTitle: confirmTitle) {
+            confirmAction()
+            guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
+            if UIApplication.shared.canOpenURL(settingsURL) {
+                UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+            }
+        } cancelAction: {
+            cancelAction?()
+        }
+    }
 }

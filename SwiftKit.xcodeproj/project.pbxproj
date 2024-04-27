@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -180,6 +180,8 @@
 		897BA2292B94A43E00B5B0BC /* NSArray+BTDAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 897BA2022B94A43D00B5B0BC /* NSArray+BTDAdditions.m */; };
 		897BA22A2B94A43E00B5B0BC /* NSFileManager+BTDAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 897BA2032B94A43D00B5B0BC /* NSFileManager+BTDAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		897D4C532B9F3DFD00B35770 /* Defaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D4C522B9F3DFD00B35770 /* Defaults+Extension.swift */; };
+		89823CE02BB8191300DFACFB /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89823CDF2BB8191300DFACFB /* UIImage+Extension.swift */; };
+		89823CE82BBA80D700DFACFB /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 89823CE72BBA80D700DFACFB /* Defaults */; };
 		898EC98E2B7B843100D7DAC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898EC98D2B7B843100D7DAC3 /* AppDelegate.swift */; };
 		898EC9902B7B843100D7DAC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898EC98F2B7B843100D7DAC3 /* SceneDelegate.swift */; };
 		898EC9922B7B843100D7DAC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898EC9912B7B843100D7DAC3 /* ViewController.swift */; };
@@ -197,7 +199,6 @@
 		89A995462BA7D41B00ABF62E /* SKMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A995452BA7D41B00ABF62E /* SKMedia.swift */; };
 		89B2F8B52BA450260045FD4B /* SKScrollContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B2F8B42BA450260045FD4B /* SKScrollContainerView.swift */; };
 		89B2FE812BA5E2BB0045FD4B /* HypeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 89B2FE802BA5E2BB0045FD4B /* HypeUI */; };
-		89B2FE842BA686660045FD4B /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 89B2FE832BA686660045FD4B /* SwiftyStoreKit */; };
 		89B2FE942BA686B60045FD4B /* SKStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B2FE932BA686B60045FD4B /* SKStore.swift */; };
 		89B2FE9D2BA6BD430045FD4B /* MerchantKit in Frameworks */ = {isa = PBXBuildFile; productRef = 89B2FE9C2BA6BD430045FD4B /* MerchantKit */; };
 		89B2FEA02BA6CCA80045FD4B /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 89B2FE9F2BA6CCA80045FD4B /* SVProgressHUD */; };
@@ -385,6 +386,7 @@
 		897BA2022B94A43D00B5B0BC /* NSArray+BTDAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BTDAdditions.m"; sourceTree = "<group>"; };
 		897BA2032B94A43D00B5B0BC /* NSFileManager+BTDAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+BTDAdditions.h"; sourceTree = "<group>"; };
 		897D4C522B9F3DFD00B35770 /* Defaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+Extension.swift"; sourceTree = "<group>"; };
+		89823CDF2BB8191300DFACFB /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		898EC98B2B7B843100D7DAC3 /* UIKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		898EC98D2B7B843100D7DAC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		898EC98F2B7B843100D7DAC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -431,9 +433,9 @@
 				89B2FE9D2BA6BD430045FD4B /* MerchantKit in Frameworks */,
 				890DD84B2BABF34200DE1212 /* KeychainSwift in Frameworks */,
 				89E771B22B9C332F007C7596 /* Defaults in Frameworks */,
+				89823CE82BBA80D700DFACFB /* Defaults in Frameworks */,
 				89243B9B2B9ED1FC0074CD3B /* HXPhotoPicker in Frameworks */,
 				89B2FEA02BA6CCA80045FD4B /* SVProgressHUD in Frameworks */,
-				89B2FE842BA686660045FD4B /* SwiftyStoreKit in Frameworks */,
 				89E771AF2B9C32DC007C7596 /* Defaults in Frameworks */,
 				89075EE02B94B254004791E4 /* IQKeyboardManagerSwift in Frameworks */,
 				89F584CB2BA7F5ED00F5BD33 /* SwiftyGif in Frameworks */,
@@ -770,6 +772,7 @@
 				898ECF612B7B87B600D7DAC3 /* UIView+Extension.swift */,
 				89C0A2B32B906C8400E64C67 /* UIButton+Extension.swift */,
 				897BA1992B949DEF00B5B0BC /* UILabel+Extension.swift */,
+				89823CDF2BB8191300DFACFB /* UIImage+Extension.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -1080,11 +1083,11 @@
 				89E771B12B9C332F007C7596 /* Defaults */,
 				89243B9A2B9ED1FC0074CD3B /* HXPhotoPicker */,
 				89B2FE802BA5E2BB0045FD4B /* HypeUI */,
-				89B2FE832BA686660045FD4B /* SwiftyStoreKit */,
 				89B2FE9C2BA6BD430045FD4B /* MerchantKit */,
 				89B2FE9F2BA6CCA80045FD4B /* SVProgressHUD */,
 				89F584CA2BA7F5ED00F5BD33 /* SwiftyGif */,
 				890DD84A2BABF34200DE1212 /* KeychainSwift */,
+				89823CE72BBA80D700DFACFB /* Defaults */,
 			);
 			productName = SwiftKit;
 			productReference = 893611B02B65462000127FA6 /* SwiftKit.framework */;
@@ -1157,14 +1160,13 @@
 			mainGroup = 893611A62B65462000127FA6;
 			packageReferences = (
 				89075EDE2B94B254004791E4 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				89E771B02B9C332F007C7596 /* XCLocalSwiftPackageReference "../../lib/Defaults-main" */,
 				89243B992B9ED1FC0074CD3B /* XCRemoteSwiftPackageReference "HXPhotoPicker" */,
 				89B2FE7F2BA5E2BB0045FD4B /* XCRemoteSwiftPackageReference "HypeUI" */,
-				89B2FE822BA686650045FD4B /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 				89B2FE9B2BA6BD430045FD4B /* XCRemoteSwiftPackageReference "merchantkit" */,
 				89B2FE9E2BA6CCA70045FD4B /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
 				89F584C92BA7F5ED00F5BD33 /* XCRemoteSwiftPackageReference "SwiftyGif" */,
 				890DD8492BABF34200DE1212 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				89823CE62BBA80D700DFACFB /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
 			productRefGroup = 893611B12B65462000127FA6 /* Products */;
 			projectDirPath = "";
@@ -1317,6 +1319,7 @@
 				897D4C532B9F3DFD00B35770 /* Defaults+Extension.swift in Sources */,
 				897BA2102B94A43D00B5B0BC /* NSURL+BTDAdditions.m in Sources */,
 				89243B862B9E057E0074CD3B /* ConstraintOffsetTarget.swift in Sources */,
+				89823CE02BB8191300DFACFB /* UIImage+Extension.swift in Sources */,
 				894D6FBF2B8E2A3D00B96DCD /* SKToast.swift in Sources */,
 				89B2FEA32BA6CCC10045FD4B /* SKProgressHUD.swift in Sources */,
 				893611CC2B65462E00127FA6 /* UICollectionView+Extension.swift in Sources */,
@@ -1735,13 +1738,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		89E771B02B9C332F007C7596 /* XCLocalSwiftPackageReference "../../lib/Defaults-main" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../lib/Defaults-main";
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
 		89075EDE2B94B254004791E4 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -1767,20 +1763,20 @@
 				minimumVersion = 4.1.7;
 			};
 		};
+		89823CE62BBA80D700DFACFB /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		89B2FE7F2BA5E2BB0045FD4B /* XCRemoteSwiftPackageReference "HypeUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hyperconnect/HypeUI";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.3.0;
-			};
-		};
-		89B2FE822BA686650045FD4B /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.16.4;
 			};
 		};
 		89B2FE9B2BA6BD430045FD4B /* XCRemoteSwiftPackageReference "merchantkit" */ = {
@@ -1825,15 +1821,15 @@
 			package = 89243B992B9ED1FC0074CD3B /* XCRemoteSwiftPackageReference "HXPhotoPicker" */;
 			productName = HXPhotoPicker;
 		};
+		89823CE72BBA80D700DFACFB /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89823CE62BBA80D700DFACFB /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
 		89B2FE802BA5E2BB0045FD4B /* HypeUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 89B2FE7F2BA5E2BB0045FD4B /* XCRemoteSwiftPackageReference "HypeUI" */;
 			productName = HypeUI;
-		};
-		89B2FE832BA686660045FD4B /* SwiftyStoreKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 89B2FE822BA686650045FD4B /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */;
-			productName = SwiftyStoreKit;
 		};
 		89B2FE9C2BA6BD430045FD4B /* MerchantKit */ = {
 			isa = XCSwiftPackageProductDependency;

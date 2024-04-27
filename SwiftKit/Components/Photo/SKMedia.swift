@@ -38,7 +38,11 @@ public class SKMedia {
         }
     }
     
-    public static func saveImageToPhotosAlbum(_ image: UIImage?, completion: @escaping (Bool) -> Void) {
+    public static func saveImageToPhotosAlbum(image: UIImage?, completion: @escaping (Bool) -> Void) {
+        saveImageToPhotosAlbum(title: "", subTitle: "", image: image, completion: completion)
+    }
+    
+    public static func saveImageToPhotosAlbum(title: String, subTitle: String, image: UIImage?, completion: @escaping (Bool) -> Void) {
         guard let image = image else { return }
         let saveBlock: () -> Void = {
             PHPhotoLibrary.shared().performChanges({
@@ -63,12 +67,10 @@ public class SKMedia {
             }
         } else if authStatus != .authorized {
             DispatchQueue.main.async {
-                completion(false)
-                SKAlert.showAlert(title: "相册访问权限未授权", message: "请前往设置界面开启相册访问权限", confirmTitle: "去设置") {
-                    guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
-                    if UIApplication.shared.canOpenURL(settingsURL) {
-                        UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
-                    }
+                SKAlert.showAppSettingAlert(title: title, message: subTitle) {
+                    completion(false)
+                } cancelAction: {
+                    completion(false)
                 }
             }
         } else {
@@ -76,7 +78,7 @@ public class SKMedia {
         }
     }
     
-    public static func saveVideoToPhotosAlbum(_ videoURLStr: String?, completion: @escaping (Bool) -> Void) {
+    public static func saveVideoToPhotosAlbum(title: String, subTitle: String, videoURLStr: String?, completion: @escaping (Bool) -> Void) {
         guard let urlString = videoURLStr, let videoURL = URL(string: urlString) else {
             completion(false)
             return
@@ -105,33 +107,67 @@ public class SKMedia {
             }
         } else if authStatus != .authorized {
             DispatchQueue.main.async {
-                completion(false)
-                SKAlert.showAlert(title: "相册访问权限未授权", message: "请前往设置界面开启相册访问权限", confirmTitle: "去设置") {
-                    guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
-                    if UIApplication.shared.canOpenURL(settingsURL) {
-                        UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
-                    }
+                SKAlert.showAppSettingAlert(title: title, message: subTitle) {
+                    completion(false)
+                } cancelAction: {
+                    completion(false)
                 }
             }
         } else {
             saveBlock()
         }
     }
+    
+    public static func checkCameraPermission(title: String, subTitle: String, completion: @escaping (Bool) -> Void) {
+        let status = AVCaptureDevice.authorizationStatus(for: .video)
+        switch status {
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+                DispatchQueue.main.async {
+                    completion(granted)
+                }
+            }
+        case .authorized:
+            completion(true)
+        default:
+            SKAlert.showAppSettingAlert(title: title, message: subTitle) {
+                completion(false)
+            } cancelAction: {
+                completion(false)
+            }
+        }
+    }
+    
+    public static func checkAudioPermission(title: String, subTitle: String, completion: @escaping (Bool) -> Void) {
+        let status = AVCaptureDevice.authorizationStatus(for: .audio)
+        switch status {
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+                DispatchQueue.main.async {
+                    completion(granted)
+                }
+            }
+        case .authorized:
+            completion(true)
+        default:
+            SKAlert.showAppSettingAlert(title: title, message:subTitle) {
+                completion(false)
+            } cancelAction: {
+                completion(false)
+            }
+        }
+    }
 
-
-    public static func mergeImages(baseImage: UIImage, overlayImage: UIImage, overlayFrame: CGRect) -> UIImage? {
+    public static func mergeImages(baseImage: UIImage,
+                                   overlayImage: UIImage) -> UIImage? {
         let scale = UIScreen.main.scale
         let baseWidth = baseImage.size.width / scale
         let baseHeight = baseImage.size.height / scale
-        let overlayScale = baseWidth / ScreenWidth
-        let x = overlayScale * overlayFrame.minX
-        let y = overlayScale * overlayFrame.minY
-        let width = overlayScale * overlayFrame.width
-        let height = overlayFrame.height * overlayScale
-        let _overlayFrame = CGRect(x: x, y: y, width: width, height: height)
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: baseWidth , height: baseHeight), false, scale)
-        baseImage.draw(in: CGRect(x: 0, y: 0, width: baseImage.size.width / scale, height: baseImage.size.height / scale))
-        overlayImage.draw(in: _overlayFrame)
+        let frame = CGRect(x: 0, y: 0, width: baseWidth, height: baseHeight)
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: baseWidth , height: baseHeight), false, 0)
+        baseImage.draw(in: frame)
+        overlayImage.draw(in: frame)
+        
         let resultImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         

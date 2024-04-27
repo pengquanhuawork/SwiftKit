@@ -9,7 +9,7 @@ import UIKit
 
 public class SKScrollContainerView: UIView {
     
-    var scrollView: UIScrollView!
+    public var scrollView: UIScrollView!
     var contentView: UIView!
     
     override init(frame: CGRect) {
