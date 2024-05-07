@@ -18,6 +18,7 @@ public enum SKPurchaseResult {
 public class SKStore {
     
     public static let subscriptionSuccessNotification = NSNotification.Name("kSubscriptionSuccessNotification")
+    public static let subscriptionStateDidChangeNotification = NSNotification.Name("kSubscriptionStateDidChangeNotification")
     
     public static let shared = SKStore()
     private var merchant: Merchant!
@@ -28,7 +29,19 @@ public class SKStore {
         guard let product = merchant.product(withIdentifier: identifier) else {
             return false
         }
-        return merchant.state(for: product).isPurchased
+
+        let state = merchant.state(for: product)
+        switch state {
+        case .unknown:
+            return false
+        case .notPurchased:
+            return false
+        case .isPurchased(let purchasedProductInfo):
+            guard let expiryDate = purchasedProductInfo.expiryDate else  {
+                return false
+            }
+            return Date().compare(expiryDate) == .orderedAscending
+        }
     }
     
     public func purchase(for identifier: String) -> Purchase? {
@@ -125,7 +138,7 @@ public class SKStore {
 
 extension SKStore : MerchantDelegate {
     public func merchant(_ merchant: Merchant, didChangeStatesFor products: Set<MerchantKit.Product>) {
-        
+        NotificationCenter.default.sk_post(name: SKStore.subscriptionStateDidChangeNotification)
     }
     public func merchantDidChangeLoadingState(_ merchant: Merchant) {
         
