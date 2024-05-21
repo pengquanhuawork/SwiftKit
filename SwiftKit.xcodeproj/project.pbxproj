@@ -82,6 +82,7 @@
 		89243B882B9E057E0074CD3B /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89243B622B9E057E0074CD3B /* ConstraintRelatableTarget.swift */; };
 		89243B892B9E057E0074CD3B /* ConstraintMakerRelatable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89243B632B9E057E0074CD3B /* ConstraintMakerRelatable+Extensions.swift */; };
 		89243B9B2B9ED1FC0074CD3B /* HXPhotoPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 89243B9A2B9ED1FC0074CD3B /* HXPhotoPicker */; };
+		893350432BE9C68200818D5C /* CommonLibs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893350422BE9C68200818D5C /* CommonLibs.swift */; };
 		893611B42B65462000127FA6 /* SwiftKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 893611B32B65462000127FA6 /* SwiftKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		893611CA2B65462E00127FA6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893611BD2B65462E00127FA6 /* UIColor+Extension.swift */; };
 		893611CB2B65462E00127FA6 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893611BE2B65462E00127FA6 /* UITableView+Extension.swift */; };
@@ -107,6 +108,7 @@
 		8961DDC82B92E27500076FA2 /* SKCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961DDC72B92E27500076FA2 /* SKCollectionViewCell.swift */; };
 		8970A7102B8884B5001F6A3A /* SKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8970A70F2B8884B5001F6A3A /* SKTableViewCell.swift */; };
 		8970A7122B8884CD001F6A3A /* SKTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8970A7112B8884CD001F6A3A /* SKTableView.swift */; };
+		897337802BFAFCB0005A67FD /* UIApplication+Convenient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8973377F2BFAFCB0005A67FD /* UIApplication+Convenient.swift */; };
 		8976B6042B9818EC001E602B /* TIMMulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8976B6022B9818EB001E602B /* TIMMulticastDelegate.m */; };
 		8976B6052B9818EC001E602B /* TIMMulticastDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8976B6032B9818EC001E602B /* TIMMulticastDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		897B90412B9437BC00B5B0BC /* UITextView+MaxCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897B90402B9437BC00B5B0BC /* UITextView+MaxCount.swift */; };
@@ -286,6 +288,7 @@
 		89243B612B9E057E0074CD3B /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerEditable.swift; sourceTree = "<group>"; };
 		89243B622B9E057E0074CD3B /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
 		89243B632B9E057E0074CD3B /* ConstraintMakerRelatable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstraintMakerRelatable+Extensions.swift"; sourceTree = "<group>"; };
+		893350422BE9C68200818D5C /* CommonLibs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonLibs.swift; sourceTree = "<group>"; };
 		893611B02B65462000127FA6 /* SwiftKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		893611B32B65462000127FA6 /* SwiftKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftKit.h; sourceTree = "<group>"; };
 		893611BD2B65462E00127FA6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -313,6 +316,7 @@
 		8961DDC72B92E27500076FA2 /* SKCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKCollectionViewCell.swift; sourceTree = "<group>"; };
 		8970A70F2B8884B5001F6A3A /* SKTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTableViewCell.swift; sourceTree = "<group>"; };
 		8970A7112B8884CD001F6A3A /* SKTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTableView.swift; sourceTree = "<group>"; };
+		8973377F2BFAFCB0005A67FD /* UIApplication+Convenient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Convenient.swift"; sourceTree = "<group>"; };
 		8976B6022B9818EB001E602B /* TIMMulticastDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMMulticastDelegate.m; sourceTree = "<group>"; };
 		8976B6032B9818EC001E602B /* TIMMulticastDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMMulticastDelegate.h; sourceTree = "<group>"; };
 		897B90402B9437BC00B5B0BC /* UITextView+MaxCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+MaxCount.swift"; sourceTree = "<group>"; };
@@ -598,6 +602,7 @@
 				8970A70D2B88848C001F6A3A /* UIKit */,
 				893611BA2B65462E00127FA6 /* Extensions */,
 				893611B32B65462000127FA6 /* SwiftKit.h */,
+				893350422BE9C68200818D5C /* CommonLibs.swift */,
 			);
 			path = SwiftKit;
 			sourceTree = "<group>";
@@ -686,6 +691,7 @@
 		8970A70D2B88848C001F6A3A /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				8973377E2BFAFCB0005A67FD /* APP */,
 				89B2FEA12BA6CCB30045FD4B /* Hud */,
 				89B2FE862BA686A10045FD4B /* ModalContainer */,
 				89B2F8B32BA44FF70045FD4B /* ScrollViewContainer */,
@@ -709,6 +715,14 @@
 				894D51CD2B8C2A9400B96DCD /* SKSelfSizeTableView.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		8973377E2BFAFCB0005A67FD /* APP */ = {
+			isa = PBXGroup;
+			children = (
+				8973377F2BFAFCB0005A67FD /* UIApplication+Convenient.swift */,
+			);
+			path = APP;
 			sourceTree = "<group>";
 		};
 		8976B6012B9818A5001E602B /* Components */ = {
@@ -1217,6 +1231,7 @@
 				89243B642B9E057E0074CD3B /* ConstraintLayoutGuide.swift in Sources */,
 				897BA2082B94A43D00B5B0BC /* NSSet+BTDAdditions.m in Sources */,
 				894D51CE2B8C2A9400B96DCD /* SKSelfSizeTableView.swift in Sources */,
+				897337802BFAFCB0005A67FD /* UIApplication+Convenient.swift in Sources */,
 				893611D12B65462E00127FA6 /* Double+Extension.swift in Sources */,
 				897BA20F2B94A43D00B5B0BC /* NSFileManager+BTDAdditions.m in Sources */,
 				89243B802B9E057E0074CD3B /* ConstraintView+Extensions.swift in Sources */,
@@ -1340,6 +1355,7 @@
 				897BA1C52B94A34300B5B0BC /* UILabel+BTDAdditions.m in Sources */,
 				89243B252B9DFE700074CD3B /* SCBackgroundView.m in Sources */,
 				89243B752B9E057E0074CD3B /* ConstraintInsetTarget.swift in Sources */,
+				893350432BE9C68200818D5C /* CommonLibs.swift in Sources */,
 				89243B762B9E057E0074CD3B /* ConstraintViewDSL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
